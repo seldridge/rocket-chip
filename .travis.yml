@@ -100,3 +100,5 @@ jobs:
       script:
         - travis_wait 80 make emulator-ndebug -C regression SUITE=RocketSuiteC JVM_MEMORY=3G
         - travis_wait 80 make emulator-regression-tests -C regression SUITE=RocketSuiteC JVM_MEMORY=3G
+    - <<: *test
+        - make -C emulator CONFIG=RoccExampleConfig
