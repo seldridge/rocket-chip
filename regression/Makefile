@@ -126,12 +126,10 @@ vsim-bmark-tests: $(VSIM_BMARK_TEST_STAMPS)
 vsim-regression-tests: $(VSIM_REGRESSION_TEST_STAMPS)
 vsim-torture: $(VSIM_TORTURE_STAMPS)
 
-submodule_names = chisel3 firrtl torture hardfloat $(ROCKETCHIP_ADDONS)
-
 # Checks out all the rocket-chip submodules
 stamps/other-submodules.stamp:
 	mkdir -p $(dir $@)
-	git -C $(abspath $(TOP)) submodule update --init --recursive $(submodule_names)
+	git -C $(abspath $(TOP)) submodule update --init --recursive
 	date > $@
 
 stamps/rocket-tools_checkout.stamp:
