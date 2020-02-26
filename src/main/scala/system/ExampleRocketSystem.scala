@@ -19,6 +19,7 @@ class ExampleRocketSystem(implicit p: Parameters) extends RocketSubsystem
     with CanHaveSlaveAXI4Port
     with HasPeripheryBootROM {
   override lazy val module = new ExampleRocketSystemModuleImp(this)
+  val bar = new foo.Bar
 }
 
 class ExampleRocketSystemModuleImp[+L <: ExampleRocketSystem](_outer: L) extends RocketSubsystemModuleImp(_outer)
